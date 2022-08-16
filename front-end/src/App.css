@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  margin: 0
+}
+
+body {
+  background-color: rgb(230, 230, 230);
+}
+
+.logo {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-family: Roboto, sans-serif;
+  width:fit-content;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 10px auto;
+}
+
+.input-field {
+  background-color: white;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 75%;
+}
+
+.button-field {
+  text-align: right;
+}
+
+.input-field input {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(230, 230, 230);
+  padding: 7px;
+  width: 48%;
+  margin: 3px;
+  text-indent: 5px;
+  font-size: 15px;
+}
+
+.button-field {
+  position: relative;
+}
+
+.button-field button {
+  padding: 10px;
+  padding-left: 40px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+.add {
+  transition: all, 0.5s;
+  background-color: rgb(149, 255, 149);
+  color: rgb(0, 85, 0);
+}
+
+.add:hover {
+  background-color: rgb(94, 253, 94);
+  cursor: pointer;
+}
+
+.search {
+  transition: all, 0.5s;
+  background-color: rgb(149, 248, 255);
+  color: rgb(0, 72, 85);
+}
+
+.search:hover {
+  background-color: rgb(92, 244, 255);
+  cursor: pointer;
+}
+
+.search .material-icons {
+  position: absolute;
+  top: 10px;
+  right: 80px;
+}
+
+.add .material-icons {
+  position: absolute;
+  top: 10px;
+  right: 195px;
+}
+
+.tickets {
+  background-color: white;
+  border-radius: 10px;
+  width: 75%;
+  padding: 10px;
+  margin: 0px auto;
+}
+
+.tickets table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tickets table th {
+  text-align: left;
+  padding: 5px;
+  border-bottom: 1px solid lightgray;
+  margin: 0px;
+}
+
+.tickets table td {
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tickets table tr:not(:last-child) td{
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.priority {
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  color: white;
+  display: inline;
+  font-size: 17px;
+}
+
+.priority.high {
+  background-color: rgb(255, 110, 110);
+}
+
+.priority.med {
+  background-color: rgb(255, 209, 6);
+}
+
+.priority.low {
+  background-color: rgb(41, 255, 41);
+}
