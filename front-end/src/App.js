@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
+import axios from "axios";
 
 function App() {
 
@@ -13,7 +14,13 @@ function App() {
   }
 
   const handleClickButton = () => {
-    console.log(values);
+    axios.post('http://localhost:3001/add', {
+      desc: values.desc,
+      profile: values.profile,
+      priority: values.prio
+    }).then((response) => {
+      console.log(response)
+    })
   }
 
   return (
@@ -22,14 +29,19 @@ function App() {
         Support Ticket
       </div>
       <div className="input-field">
-        <input type="text" name="desc" placeholder="Descrição" onChange={handleChangeVariables}/>
-        <input type="text" name="profile" placeholder="Perfil" onChange={handleChangeVariables}/>
+        <input type="text" name="desc" placeholder="Descrição" onChange={handleChangeVariables} className="desc"/>
+        <input type="text" name="profile" placeholder="Perfil" onChange={handleChangeVariables} className="prof"/>
+        <select name="prio" onChange={handleChangeVariables} className="form-control">
+          <option>Alta</option>
+          <option>Média</option>
+          <option>Baixa</option>
+        </select>
         <div className="button-field">
-          <button className="add">
+          <button className="add" onClick={handleClickButton}>
           <span class="material-icons">add</span>
             Adicionar
           </button>
-          <button className="search" onClick={handleClickButton}>
+          <button className="search">
             <span className="material-icons">search</span>
             Pesquisar
           </button>

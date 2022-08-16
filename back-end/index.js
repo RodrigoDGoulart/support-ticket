@@ -13,8 +13,15 @@ const db = mysql.createPool({
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('hello world');
+app.post('/add', (req, res) => {
+    const { desc } = req.body;
+    const { profile } = req.body;
+    const { priority } = req.body;
+
+    let sql = " INSERT INTO tickets ( descricao , nome , prioridade ) VALUES (?, ?, ?)"
+    db.query(sql, [desc, profile, priority], (err, result) => {
+        console.log(err);
+    })
 })
 
 app.listen(3001, () => {

@@ -29,10 +29,6 @@ body {
   width: 75%;
 }
 
-.button-field {
-  text-align: right;
-}
-
 .input-field input {
   padding: 5px;
   border-radius: 10px;
@@ -45,8 +41,25 @@ body {
   font-size: 15px;
 }
 
+.input-field .desc {
+  width: 47%;
+}
+
+.input-field .prof {
+  width: 30%;
+}
+
+.form-control {
+  display: inline;
+  width: 20%;
+  margin-right: 7px;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+}
+
 .button-field {
   position: relative;
+  text-align: right;
 }
 
 .button-field button {
@@ -81,14 +94,14 @@ body {
 
 .search .material-icons {
   position: absolute;
-  top: 10px;
-  right: 80px;
+  top: 15px;
+  right: 85px;
 }
 
 .add .material-icons {
   position: absolute;
-  top: 10px;
-  right: 195px;
+  top: 15px;
+  right: 215px;
 }
 
 .tickets {
