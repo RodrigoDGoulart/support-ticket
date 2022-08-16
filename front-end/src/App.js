@@ -48,12 +48,10 @@ function App() {
         </select>
         <div className="button-field">
           <button className="add" onClick={handleClickButton}>
-          <span className="material-icons">add</span>
-            Adicionar
-          </button>
-          <button className="search">
-            <span className="material-icons">search</span>
-            Pesquisar
+            <a href="http://localhost:3000">
+              <span className="material-icons">add</span>
+              Adicionar
+            </a>
           </button>
         </div>
       </div>

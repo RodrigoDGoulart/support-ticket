@@ -1,9 +1,13 @@
 import react from "react";
 import "./table-row.css";
+import FormDialog from "../dialog/dialog";
 
 export default function Trow(props) {
+
+    const [open, setOpen] = react.useState(false);
+
     let classValue = "priority "
-    switch(props.prioridade){
+    switch (props.prioridade) {
         case "Alta":
             classValue = classValue + "high";
             break;
@@ -13,18 +17,21 @@ export default function Trow(props) {
         default:
             classValue = classValue + "low";
     }
+
+    const handleClickTicket = () => {
+        setOpen(true);
+    }
+
     return (
-        <tr>
-            <td>{props.descricao}</td>
-            <td>{props.nome}</td>
-            {/* como colocar condição para trocar estilo? */}
-            <td>
-                <p className = {classValue}>{props.prioridade}</p>
-                <div className="icons">
-                    <span className="material-icons edit">edit</span>
-                    <span className="material-icons delete">delete</span>
-                </div>
-            </td>
-        </tr>
+        <>
+            <FormDialog open={open} setOpen={setOpen} descricao={props.descricao} nome={props.nome} prioridade={props.prioridade} listTickets={props.listTickets} setListTickets={props.setListTickets}/>
+            <tr>
+                <td>{props.descricao}</td>
+                <td>{props.nome}</td>
+                <td>
+                    <p className={classValue}>{props.prioridade}</p>
+                </td>
+            </tr>
+        </>
     )
 }

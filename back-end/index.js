@@ -33,6 +33,24 @@ app.get("/tickets", (req, res) => {
     })
 })
 
+app.put("/edit", (req, res) => {
+    const { id } = req.body;
+    const { descricao } = req.body;
+    const { nome } = req.body;
+    const { prioridade } = req.body;
+
+    let sql = "UPDATE tickets SET nome = ?, descricao = ?, prioridade = ? WHERE id = ?";
+
+    db.query(sql, [nome, descricao, prioridade, id], (err, result) => {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    })
+})
+
 app.listen(3001, () => {
     console.log("rodando")
 })
