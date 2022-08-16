@@ -24,6 +24,15 @@ app.post('/add', (req, res) => {
     })
 })
 
+app.get("/tickets", (req, res) => {
+    let sql = "SELECT * FROM tickets";
+
+    db.query(sql, (err, result) => {
+        if (err) console.log(err);
+        else res.send(result);
+    })
+})
+
 app.listen(3001, () => {
     console.log("rodando")
 })

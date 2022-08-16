@@ -51,8 +51,8 @@ body {
 
 .form-control {
   display: inline;
-  width: 20%;
-  margin-right: 7px;
+  width: 21%;
+  margin-right: 3px;
   border-radius: 10px;
   background-color: rgb(230, 230, 230);
 }
@@ -122,36 +122,4 @@ body {
   padding: 5px;
   border-bottom: 1px solid lightgray;
   margin: 0px;
-}
-
-.tickets table td {
-  padding: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.tickets table tr:not(:last-child) td{
-  border-bottom: 1px solid rgb(192, 192, 192);
-}
-
-.priority {
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  color: white;
-  display: inline;
-  font-size: 17px;
-}
-
-.priority.high {
-  background-color: rgb(255, 110, 110);
-}
-
-.priority.med {
-  background-color: rgb(255, 209, 6);
-}
-
-.priority.low {
-  background-color: rgb(41, 255, 41);
 }

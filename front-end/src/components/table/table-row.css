@@ -1,0 +1,65 @@
+td {
+    padding-top: 10px;
+    padding-bottom: 2px;
+}
+
+tr {
+    margin: 70px;
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  tr:not(:last-child) td{
+    border-bottom: 1px solid rgb(192, 192, 192);
+  }
+  
+  .priority {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    display: inline;
+  }
+  
+  .priority.high {
+    background-color: rgb(255, 110, 110);
+  }
+  
+  .priority.med {
+    background-color: rgb(255, 209, 6);
+  }
+  
+  .priority.low {
+    background-color: rgb(41, 255, 41);
+  }
+
+  .icons {
+    display: inline;
+    float: right;
+  }
+
+  .material-icons.delete {
+    transition: all 0.25s;
+    color: rgb(167, 0, 0);
+    padding: 5px;
+  }
+
+  .material-icons.edit {
+    transition: all 0.25s;
+    color: rgb(0, 90, 0);
+    padding: 5px;
+  }
+
+  .material-icons.delete:hover {
+    background-color: rgb(255, 148, 148);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .material-icons.edit:hover{
+    background-color: rgb(138, 255, 138);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

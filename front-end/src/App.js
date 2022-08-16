@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import axios from "axios";
+import Trow from "./components/table/table-row";
 
 function App() {
 
   const [values, setValues] = useState();
+  const [listTickets, setListTickets] = useState();
 
+  console.log(listTickets);
   const handleChangeVariables = (value) => {
     setValues(prevValue => ({
       ...prevValue,
@@ -23,6 +26,12 @@ function App() {
     })
   }
 
+  useEffect(() => {
+    axios.get("http://localhost:3001/tickets").then((response) => {
+      setListTickets(response.data);
+  })
+  }, [])
+
   return (
     <>
       <div className="logo">
@@ -32,13 +41,14 @@ function App() {
         <input type="text" name="desc" placeholder="Descrição" onChange={handleChangeVariables} className="desc"/>
         <input type="text" name="profile" placeholder="Perfil" onChange={handleChangeVariables} className="prof"/>
         <select name="prio" onChange={handleChangeVariables} className="form-control">
+          <option disabled selected value>Prioridade</option>
           <option>Alta</option>
           <option>Média</option>
           <option>Baixa</option>
         </select>
         <div className="button-field">
           <button className="add" onClick={handleClickButton}>
-          <span class="material-icons">add</span>
+          <span className="material-icons">add</span>
             Adicionar
           </button>
           <button className="search">
@@ -54,39 +64,17 @@ function App() {
             <th>Perfil</th>
             <th>Prioridade</th>
           </tr>
-          <tr>
-            <td>
-              desc
-            </td>
-            <td>
-              Perfil
-            </td>
-            <td>
-            <p className="priority med">média</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              desc
-            </td>
-            <td>
-              Perfil
-            </td>
-            <td>
-              <p className="priority low">baixa</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              desc
-            </td>
-            <td>
-              Perfil
-            </td>
-            <td>
-              <p className="priority high">alta</p>
-            </td>
-          </tr>
+          {typeof listTickets !== "undefined" && listTickets.map((value) => {
+            return <Trow 
+            key={value.id} 
+            listCard={listTickets} 
+            setListCard={setListTickets} 
+            id={value.id} 
+            descricao={value.descricao} 
+            nome={value.nome} 
+            prioridade={value.prioridade}>
+            </Trow>
+          })}
         </table>
       </div>
     </>
